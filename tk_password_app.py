@@ -95,12 +95,19 @@ root = tk.Tk()
 canvas  = tk.Canvas(root, height= HEIGHT, width = WIDTH)
 canvas.pack()
 
-background_image= tk.PhotoImage(file="The-Demise-of-the-Password.png")
+background_image = tk.PhotoImage(file="The-Demise-of-the-Password.png")
 background_label = tk.Label(root, image=background_image)
 background_label.place(relwidth=1, relheight=1)
+
+upper_frame = tk.Frame(root, bg='#abc1ff',bd=15)
+upper_frame.place(relx = 0.5,rely=0.1,relwidth=0.75, relheight=0.15, anchor='n')
+upper_frame_label = tk.Label(upper_frame,bg='#abc1ff',justify='center',text="How secure is your password?")
+upper_frame_label.pack()
+upper_frame_label.config(justify='center',font=("Courier", 34))
+
 #To orgranize widgets on the screen we use frame
-frame = tk.Frame(root, bg='#abc1ff',bd=15)
-frame.place(relx = 0.5,rely=0.1,relwidth=0.75, relheight=0.1, anchor='n')
+center_frame = tk.Frame(root, bg='#abc1ff',bd=15)
+center_frame.place(relx = 0.5,rely=0.30,relwidth=0.75, relheight=0.1, anchor='n')
 
 
 #Trying to make another title. 
@@ -114,7 +121,7 @@ frame.place(relx = 0.5,rely=0.1,relwidth=0.75, relheight=0.1, anchor='n')
 
 
 
-entry = tk.Entry(frame,bg='#cedbdb',bd=10, show="*")
+entry = tk.Entry(center_frame,bg='#cedbdb',bd=10, show="*")
 
 entry.place(relwidth=0.45, relheight=1.2, rely= -0.1 )
 entry.config(font=("Courier", 16))
@@ -124,16 +131,16 @@ entry.config(font=("Courier", 16))
 
 counter = [0]
 condition = [False]
-button2 = tk.Button(frame, text= "Reveal",bg ="#bec2c2", command = lambda: reveal_password(counter,condition))
+button2 = tk.Button(center_frame, text= "Reveal",bg ="#bec2c2", command = lambda: reveal_password(counter,condition))
 
 button2.place(relx=0.8, rely=0, relwidth=0.19, relheight=1)
 button2.config(font=("Courier", 16))
 
 #Passed in button into fram , you could also pass it into the root.
-button1 = tk.Button(frame, text= "Check Password",bg ="#bec2c2", command = lambda: get_password_info(entry.get(),condition))
+button1 = tk.Button(center_frame, text= "Check Password",bg ="#bec2c2", command = lambda: get_password_info(entry.get(),condition))
 
 button1.place(relx=0.5, rely=0, relwidth=0.26, relheight=1)
-button1.config(font=("Courier", 16))
+button1.config(font=("Courier", 15))
 
     
     
@@ -142,7 +149,7 @@ button1.config(font=("Courier", 16))
 
 
 lower_frame = tk.Frame(root, bg='#80c1ff',bd=15)
-lower_frame.place(relx=0.5, rely=0.25, relwidth=0.75,relheight=0.65, anchor='n')
+lower_frame.place(relx=0.5, rely=0.45, relwidth=0.75,relheight=0.45, anchor='n')#relheight=0.65
 
 label = tk.Label(lower_frame,anchor='nw',justify='left',bd=4)
 label.config(font=("Courier", 20))
