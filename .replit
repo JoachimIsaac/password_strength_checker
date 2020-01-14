@@ -1,2 +1,0 @@
-language = "bash"
-run = "python3 tk_password_app.py"
