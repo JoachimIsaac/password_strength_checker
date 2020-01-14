@@ -140,7 +140,7 @@ button2.config(font=("Courier", 16))
 button1 = tk.Button(center_frame, text= "Check Password",bg ="#bec2c2", command = lambda: get_password_info(entry.get(),condition))
 
 button1.place(relx=0.5, rely=0, relwidth=0.26, relheight=1)
-button1.config(font=("Courier", 15))
+button1.config(font=("Courier", 12))
 
     
     
