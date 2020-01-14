@@ -1,4 +1,12 @@
 # password_strength_checker
+
+terminal commands to ensure all python modules are installed:
+     pip3/pip install requests 
+     pip3/pip install tkinter
+     pip3/pip install hashlib
+
+
+
 ---> Password strength checker made with GUI (Tikinter): 
      This checks the strength of your password by showing you how many times the password has been compromised using
      a password api ('https://api.pwnedpasswords.com/range/'). 
